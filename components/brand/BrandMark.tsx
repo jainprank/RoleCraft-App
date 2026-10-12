@@ -25,7 +25,7 @@ export function BrandMark({
       aria-hidden="true"
     >
       <defs>
-        <linearGradient id="jm-magnet" x1="0" y1="0" x2="1" y2="0">
+        <linearGradient id="rc-magnet" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0.5" stopColor={indigo} />
           <stop offset="0.5" stopColor={amber} />
         </linearGradient>
@@ -33,7 +33,7 @@ export function BrandMark({
       {/* Horseshoe body */}
       <path
         d="M7 20 L7 14 a9 9 0 0 1 18 0 L25 20"
-        stroke="url(#jm-magnet)"
+        stroke="url(#rc-magnet)"
         strokeWidth="3.5"
         strokeLinecap="round"
         fill="none"
@@ -71,7 +71,7 @@ export function Wordmark({ size = "md", className }: WordmarkProps) {
           textCls,
         )}
       >
-        Job<span className="text-indigo-600">Magnet</span>
+        Role<span className="text-indigo-600">Craft</span>
       </span>
     </span>
   );
