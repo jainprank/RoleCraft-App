@@ -273,7 +273,7 @@ export default function StartPage() {
                   <Input
                     id="candidate-name"
                     type="text"
-                    placeholder="e.g. Jane Doe"
+                    placeholder="e.g. Priyanka Jain"
                     value={candidateName}
                     onChange={(e) => setCandidateName(e.target.value)}
                     className="bg-white text-sm"
@@ -316,12 +316,12 @@ export default function StartPage() {
                   placeholder={`Paste your resume, or your LinkedIn About + Experience — either format works.
 
 Example:
-Senior PM at Stripe. Previously led Growth at Dropbox (0 → 1M users). Built checkout flows processed by 3M+ merchants. Obsessed with reducing activation friction.
+Lead Product Owner at The Hashgraph Group. Built Flowgenix-AI, a multi-agent GenAI system that cut carbon-methodology processing from 4–5 months to 1–2 days. Eight years at Accenture on blockchain programs.
 
 Work Experience
-Stripe · Senior Product Manager · 2022 – Present
-• Redesigned onboarding flow, reduced time-to-first-charge by 40%
-• Led 6-person squad shipping Radar ML fraud rules
+The Hashgraph Group · Lead Product Owner · Dec 2025 – Present
+• Led Flowgenix-AI, cutting carbon-methodology processing from 4–5 months to 1–2 days
+• Took EcoGuard live with clients across India, the Philippines and Latin America
 ...`}
                   value={profile}
                   onChange={(e) => setProfile(e.target.value)}
