@@ -165,7 +165,7 @@ export default function Home() {
             An actual generated site — not a mockup.
           </h2>
           <p className="mt-3 text-base text-slate-500 max-w-2xl leading-relaxed">
-            A real RoleCraft run: a Group Product Manager application to
+            A real RoleCraft run: a Product Manager application to
             a sample company, themed in its own brand. Scroll inside the
             frame, or open the full site.
           </p>
