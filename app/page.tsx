@@ -237,9 +237,6 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-slate-100 py-8 px-6 text-center text-xs text-slate-400 mt-auto">
-        <p className="mb-1">
-          Built solo for the OpenAI × Outskill hackathon · May 25 – 31, 2026
-        </p>
         <p>
           Every agent runs on the{" "}
           <a
