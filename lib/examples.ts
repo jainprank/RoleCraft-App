@@ -92,14 +92,15 @@ const aboutFor = (company: string) =>
 
 // ── Sample landing-page generation (illustrative target company). ──
 
+// Matches priyankajain.vercel.app: dark canvas, green accent, Space Grotesk + Inter.
 const SAMPLE_BRAND: BrandStyle = {
-  primary: "#58CC02",
-  secondary: "#FFFFFF",
-  background: "#FFFFFF",
-  headline_font: "din-round",
-  body_font: "din-round",
-  mood: "minimal",
-  source: "brandfetch",
+  primary: "#3DDC97",
+  secondary: "#E8EEF3",
+  background: "#0A0F14",
+  headline_font: "Space Grotesk",
+  body_font: "Inter",
+  mood: "tech-dark",
+  source: "codex-fallback",
 };
 
 const SAMPLE_WHY_FIT: Narrative["why_im_a_fit"] = WHY_FIT_GENERIC;
