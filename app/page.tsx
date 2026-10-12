@@ -3,8 +3,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Wordmark } from "@/components/brand/BrandMark";
 import { LandingDemo } from "@/components/brand/LandingDemo";
-import { PortfolioRender } from "@/components/portfolio/PortfolioRender";
-import { DUOLINGO_EXAMPLE } from "@/lib/examples";
 import {
   Search,
   Palette,
@@ -194,17 +192,21 @@ export default function Home() {
               Open full site &rarr;
             </a>
           </div>
-          {/* The real render, scrollable inside the frame (keyboard-focusable). */}
+          {/* Full-page screenshot of the sample site, scrollable inside the frame (keyboard-focusable). */}
           <div
             tabIndex={0}
             role="group"
-            aria-label="Preview of a generated portfolio — scroll to explore"
+            aria-label="Screenshot of the sample portfolio site — scroll to explore"
             className="h-[600px] overflow-y-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500"
           >
-            <PortfolioRender
-              generation={DUOLINGO_EXAMPLE}
-              showInfoBadge={false}
-              headingLevel={2}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/sample-portfolio.jpg"
+              alt="Screenshot of priyankajain.vercel.app"
+              width={1200}
+              height={8109}
+              loading="lazy"
+              className="block w-full h-auto"
             />
           </div>
         </div>
