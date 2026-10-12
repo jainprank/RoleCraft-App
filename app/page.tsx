@@ -181,16 +181,18 @@ export default function Home() {
             </div>
             <div className="flex-1 mx-2 min-w-0">
               <div className="rounded-md bg-white border border-slate-200 px-3 py-1 text-xs text-slate-500 font-mono truncate text-center">
-                example-portfolio.vercel.app
+                priyankajain.vercel.app
               </div>
             </div>
-            <Link
-              href="/gallery"
-              aria-label="Browse the brand gallery"
+            <a
+              href="https://priyankajain.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open the full sample portfolio site"
               className="flex-shrink-0 text-xs font-medium text-indigo-600 hover:text-indigo-700 transition-colors"
             >
               Open full site &rarr;
-            </Link>
+            </a>
           </div>
           {/* The real render, scrollable inside the frame (keyboard-focusable). */}
           <div
