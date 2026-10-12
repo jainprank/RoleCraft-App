@@ -3,64 +3,94 @@ import type { BrandStyle, Generation, Narrative, PitchSection } from "@/lib/type
 /**
  * Showcase data for the brand gallery (`/gallery`) and the landing-page example.
  *
- * All candidate details here are placeholders (sample candidate "Jane Doe").
- * Replace them with your own real profile and generations before publishing
- * these pages. Only the structure and the per-company brand styling are real.
+ * The candidate and track record come from the public profile at
+ * priyankajain.vercel.app. The pitch copy and target-company brands are
+ * illustrative examples, not real applications.
  */
 
-const NAME = "Jane Doe";
-const CONTACT = "https://www.linkedin.com/in/your-handle/";
+const NAME = "Priyanka Jain";
+const CONTACT = "https://www.linkedin.com/in/jainprank";
 const EMAIL = "you@example.com";
 const CREATED_AT = "2026-01-01T00:00:00Z";
 
-// Placeholder résumé — identical on every card.
+// Career history, from the public profile.
 const RESUME: Narrative["resume_bullets"] = [
   {
-    company: "Example Co",
-    title: "Senior Product Manager",
-    dates: "January 2022 - Present",
+    company: "The Hashgraph Group",
+    title: "Lead Product Owner",
+    dates: "December 2025 - Present",
     bullets: [
-      "Led a measurable growth initiative across three markets.",
-      "Built and launched a 0-to-1 feature used by hundreds of thousands of users.",
-      "Improved a core funnel metric through research-led experiments.",
+      "Own strategy, roadmap and cross-portfolio prioritization for the H4E suite: EcoGuard, TrackTrace and Flowgenix-AI.",
+      "Led Flowgenix-AI, cutting carbon-methodology processing from 4–5 months to 1–2 days.",
+      "Took EcoGuard live with clients across India, the Philippines and Latin America.",
+      "Built IDTrust, a decentralized identity product, using Claude from requirements through delivery.",
+      "Lead and mentor a team of product owners.",
     ],
   },
   {
-    company: "Sample Labs",
-    title: "Product Manager",
-    dates: "January 2019 - December 2021",
+    company: "The Hashgraph Group",
+    title: "Associate Manager · Product Manager",
+    dates: "December 2024 - December 2025",
     bullets: [
-      "Shipped a payments flow that reduced checkout drop-off.",
-      "Ran cross-functional launches with engineering and design.",
+      "Product management for enterprise products on Hedera.",
+    ],
+  },
+  {
+    company: "Accenture",
+    title: "Lead Consultant · Functional Lead",
+    dates: "November 2021 - December 2024",
+    bullets: [
+      "Led track-and-trace DLT work that drove a $50M supply-chain cost reduction for a global cloud provider.",
+      "Led 30+ team members across several workstreams and stakeholder groups.",
+      "Delivered a tokenized digital-identity platform for a major Japanese telecom.",
+    ],
+  },
+  {
+    company: "Accenture",
+    title: "Senior Analyst · Scrum Master",
+    dates: "December 2020 - November 2021",
+    bullets: [
+      "Scrum Master on blockchain delivery teams.",
+    ],
+  },
+  {
+    company: "Accenture",
+    title: "Analyst · Business Analyst",
+    dates: "July 2017 - December 2020",
+    bullets: [
+      "Business analyst on blockchain programs for global clients.",
     ],
   },
 ];
 
-// Company-agnostic proof points (placeholder metrics).
+// Proof points, from the public profile's metrics.
 const WHY_FIT_GENERIC: Narrative["why_im_a_fit"] = [
   {
-    bullet: "Placeholder proof point: a concrete launch and its business impact.",
-    metric: "Metric A",
+    bullet:
+      "Built Flowgenix-AI, a multi-agent GenAI system with human-in-the-loop checkpoints that turns carbon-methodology documents into executable workflows.",
+    metric: "~98% faster",
   },
   {
-    bullet: "Placeholder proof point: team building or ownership scope.",
-    metric: "Metric B",
+    bullet:
+      "Led a blockchain track-and-trace program for a global cloud provider's supply chain, with 30+ team members.",
+    metric: "$50M cost reduction",
   },
   {
-    bullet: "Placeholder proof point: funnel or retention improvement.",
-    metric: "Metric C",
+    bullet:
+      "Turn discovery into prioritized roadmaps across a three-product enterprise portfolio, from workshops through delivery.",
+    metric: "3-product portfolio",
   },
 ];
 
 const ABOUT_BASE =
-  "I am a product leader who ships work end to end: research, specs, launch, and analysis. I like roles where strategy has to become shipped product.";
+  "I'm a Lead Product Owner who turns complex problems into products that ship. I trained as a chemical engineer at IIT Roorkee, spent eight years at Accenture on blockchain programs, and now own a portfolio of enterprise products on Hedera. I'm most useful where the domain is hard and the stakeholders are many: carbon markets, digital identity and supply chains.";
 
-const HEADLINE_PREFIX = "Product leader with a track record of shipping growth work — ";
+const HEADLINE_PREFIX = "Lead Product Owner shipping GenAI and Web3 products — ";
 
 const aboutFor = (company: string) =>
-  `${ABOUT_BASE} At ${company}, I would bring experience building product teams and using data to make engagement feel natural.`;
+  `${ABOUT_BASE} At ${company}, I'd bring that same loop: start from the problem, price in delivery cost, and keep humans in the loop where trust matters.`;
 
-// ── Sample landing-page generation (placeholder content). ──
+// ── Sample landing-page generation (illustrative target company). ──
 
 const SAMPLE_BRAND: BrandStyle = {
   primary: "#58CC02",
@@ -76,18 +106,18 @@ const SAMPLE_WHY_FIT: Narrative["why_im_a_fit"] = WHY_FIT_GENERIC;
 
 const SAMPLE_PITCH: PitchSection = {
   stance: "builder",
-  seed: "placeholder seed describing the product opportunity",
-  title: "What I would ship at Example Company",
-  problem: "Placeholder: the user problem observed in the product, with specifics.",
-  hypothesis: "Placeholder: the change expected to move the target metric, and why.",
-  proposed_solution: "Placeholder: the concrete experiment and how it would be validated.",
+  seed: "illustrative product opportunity for the sample company",
+  title: "What I would ship at Example Co",
+  problem: "Illustrative: a user problem observed in the product, with specifics.",
+  hypothesis: "Illustrative: the change expected to move the target metric, and why.",
+  proposed_solution: "Illustrative: the concrete experiment and how it would be validated.",
   metrics_to_track: [
     "Primary metric",
     "Secondary metric",
     "Guardrail metric",
   ],
-  tradeoffs: ["Placeholder tradeoff of the proposal."],
-  guardrails: ["Placeholder guardrail the change must respect."],
+  tradeoffs: ["Illustrative tradeoff of the proposal."],
+  guardrails: ["Illustrative guardrail the change must respect."],
   evidence: [],
   confidence: 0.8,
 };
@@ -145,18 +175,18 @@ function makeGeneration(args: {
 
 /** Sample generation shown on the landing page and the gallery lead card. */
 export const DUOLINGO_EXAMPLE: Generation = makeGeneration({
-  company: "Example Learning Co",
+  company: "Example Co",
   domain: "example.com",
   jobTitle: "Group Product Manager",
   shortId: "sample0001",
   brand: SAMPLE_BRAND,
-  headline: "Product leader with a track record of growth — interested in building daily habits for learners.",
-  about: aboutFor("Example Learning Co"),
+  headline: "Lead Product Owner shipping GenAI and Web3 products — interested in building daily habits for learners.",
+  about: aboutFor("Example Co"),
   whyFit: SAMPLE_WHY_FIT,
   pitch: SAMPLE_PITCH,
 });
 
-// The other sample cards: same placeholder candidate, brand-matched, framing tailored per company.
+// The other sample cards: same candidate, brand-matched, framing tailored per company.
 interface CardConfig {
   readonly company: string;
   readonly domain: string;
