@@ -1,0 +1,309 @@
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Wordmark } from "@/components/brand/BrandMark";
+import { LandingDemo } from "@/components/brand/LandingDemo";
+import { PortfolioRender } from "@/components/portfolio/PortfolioRender";
+import { DUOLINGO_EXAMPLE } from "@/lib/examples";
+import {
+  Search,
+  Palette,
+  PenLine,
+  Lightbulb,
+  Code2,
+  type LucideIcon,
+} from "lucide-react";
+
+export default function Home() {
+  return (
+    <main className="min-h-dvh bg-white flex flex-col">
+      {/* Nav */}
+      <nav className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+        <Link href="/" aria-label="RoleCraft home">
+          <Wordmark size="md" />
+        </Link>
+        <div className="flex items-center gap-4">
+          <a
+            href="#how-it-works"
+            className="hidden sm:inline text-sm text-slate-500 hover:text-slate-800 transition-colors"
+          >
+            How it works
+          </a>
+          <Link
+            href="/start"
+            className={cn(buttonVariants({ size: "sm" }))}
+          >
+            Try it free &rarr;
+          </Link>
+        </div>
+      </nav>
+
+      {/* Hero — split layout */}
+      <section className="px-6 pt-12 pb-16 lg:pt-20 lg:pb-24 max-w-6xl mx-auto w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Left — copy */}
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700 mb-5">
+              <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse" />
+              Free to try · No account needed
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-5 leading-[1.05]">
+              The portfolio recruiters{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-indigo-600">
+                  can&apos;t ignore.
+                </span>
+                <span
+                  className="absolute -bottom-1 left-0 h-3 w-full bg-amber-200/60 -z-0 rounded-sm"
+                  aria-hidden
+                />
+              </span>
+            </h1>
+            <p className="text-base md:text-lg text-slate-500 mb-7 leading-relaxed max-w-lg">
+              Paste a job description. Drop your LinkedIn. In 96 seconds, walk
+              away with a brand-matched portfolio site + a PM-style pitch
+              tailored to that exact role.
+            </p>
+            <div className="flex flex-wrap gap-3 mb-6">
+              <Link
+                href="/start"
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "text-base px-7",
+                )}
+              >
+                Try it free &rarr;
+              </Link>
+              <a
+                href="#how-it-works"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "text-base px-7",
+                )}
+              >
+                See the 5 agents
+              </a>
+            </div>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-400">
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                Tailored to the JD
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                Brand-matched design
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                Yours to deploy anywhere
+              </span>
+            </div>
+          </div>
+
+          {/* Right — live demo */}
+          <div className="lg:pl-4">
+            <LandingDemo />
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section
+        id="how-it-works"
+        className="px-6 pb-20 max-w-6xl mx-auto w-full"
+      >
+        <div className="mb-10">
+          <p className="text-xs font-semibold text-indigo-600 uppercase tracking-widest mb-2">
+            5 agents · 1 portfolio
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight max-w-2xl">
+            Each agent does one job. Together they ship a portfolio in 96
+            seconds.
+          </h2>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <AgentCard
+            order={1}
+            icon={Search}
+            name="Research"
+            description="Scrapes the JD, parses career level, infers the right pitch stance."
+          />
+          <AgentCard
+            order={2}
+            icon={Palette}
+            name="Brand"
+            description="Pulls real brand colors + fonts via Brandfetch. Your site looks native to the company."
+          />
+          <AgentCard
+            order={3}
+            icon={PenLine}
+            name="Narrative"
+            description="Writes your headline, About, cover letter, and role-specific resume bullets. Zero generic fluff."
+          />
+          <AgentCard
+            order={4}
+            icon={Lightbulb}
+            name="Pitch"
+            description="Optional PM-style pitch — problem, hypothesis, solution, metrics. Builder · Analyst · Customer · Strategist."
+          />
+          <AgentCard
+            order={5}
+            icon={Code2}
+            name="Code"
+            description="Generates a buildable Next.js project + zips it for self-deploy. Done in milliseconds."
+          />
+        </div>
+      </section>
+
+      {/* Real generated site — reference example */}
+      <section id="example" className="px-6 pb-20 max-w-6xl mx-auto w-full">
+        <div className="mb-8">
+          <p className="text-xs font-semibold text-indigo-600 uppercase tracking-widest mb-2">
+            See it for real
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight max-w-2xl">
+            An actual generated site — not a mockup.
+          </h2>
+          <p className="mt-3 text-base text-slate-500 max-w-2xl leading-relaxed">
+            A real RoleCraft run: a Group Product Manager application to
+            a sample company, themed in its own brand. Scroll inside the
+            frame, or open the full site.
+          </p>
+        </div>
+
+        <div className="rounded-2xl border border-slate-200 bg-white shadow-xl overflow-hidden">
+          {/* Browser chrome */}
+          <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-200">
+            <div className="flex gap-1.5">
+              <span className="h-3 w-3 rounded-full bg-red-400" />
+              <span className="h-3 w-3 rounded-full bg-yellow-400" />
+              <span className="h-3 w-3 rounded-full bg-green-400" />
+            </div>
+            <div className="flex-1 mx-2 min-w-0">
+              <div className="rounded-md bg-white border border-slate-200 px-3 py-1 text-xs text-slate-500 font-mono truncate text-center">
+                example-portfolio.vercel.app
+              </div>
+            </div>
+            <Link
+              href="/gallery"
+              aria-label="Browse the brand gallery"
+              className="flex-shrink-0 text-xs font-medium text-indigo-600 hover:text-indigo-700 transition-colors"
+            >
+              Open full site &rarr;
+            </Link>
+          </div>
+          {/* The real render, scrollable inside the frame (keyboard-focusable). */}
+          <div
+            tabIndex={0}
+            role="group"
+            aria-label="Preview of a generated portfolio — scroll to explore"
+            className="h-[600px] overflow-y-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500"
+          >
+            <PortfolioRender
+              generation={DUOLINGO_EXAMPLE}
+              showInfoBadge={false}
+              headingLevel={2}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Trust strip */}
+      <section className="px-6 pb-16 max-w-6xl mx-auto w-full">
+        <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 lg:p-8">
+          <div className="grid gap-6 sm:grid-cols-3">
+            <Stat
+              value="96s"
+              label="paste to download"
+              note="median end-to-end generation"
+            />
+            <Stat
+              value="0"
+              label="templates"
+              note="brand-matched to the company, not a stock theme"
+            />
+            <Stat
+              value="Your"
+              label="code, your hosting"
+              note="self-deploy to Vercel · Netlify · anywhere"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-100 py-8 px-6 text-center text-xs text-slate-400 mt-auto">
+        <p className="mb-1">
+          Built solo for the OpenAI × Outskill hackathon · May 25 – 31, 2026
+        </p>
+        <p>
+          Every agent runs on the{" "}
+          <a
+            href="https://platform.openai.com/codex"
+            className="underline hover:text-slate-600"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            OpenAI Codex SDK
+          </a>
+          .
+        </p>
+      </footer>
+    </main>
+  );
+}
+
+function AgentCard({
+  order,
+  icon: Icon,
+  name,
+  description,
+}: {
+  readonly order: number;
+  readonly icon: LucideIcon;
+  readonly name: string;
+  readonly description: string;
+}) {
+  return (
+    <div className="group relative rounded-xl border border-slate-200 bg-white p-4 transition-all hover:border-indigo-200 hover:shadow-sm">
+      <div className="flex items-start justify-between mb-2">
+        <span
+          className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-50 ring-1 ring-indigo-100"
+          aria-hidden
+        >
+          <Icon className="h-[18px] w-[18px] text-indigo-600" strokeWidth={2} />
+        </span>
+        <span className="text-[10px] font-mono text-slate-300 group-hover:text-indigo-400 transition-colors">
+          0{order}
+        </span>
+      </div>
+      <h3 className="text-sm font-semibold text-slate-900 mb-1">
+        {name}{" "}
+        <span className="font-normal text-slate-400 text-xs">agent</span>
+      </h3>
+      <p className="text-xs text-slate-500 leading-relaxed">{description}</p>
+    </div>
+  );
+}
+
+function Stat({
+  value,
+  label,
+  note,
+}: {
+  readonly value: string;
+  readonly label: string;
+  readonly note: string;
+}) {
+  return (
+    <div>
+      <div className="flex items-baseline gap-2 mb-1">
+        <span className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+          {value}
+        </span>
+        <span className="text-sm font-medium text-slate-600">{label}</span>
+      </div>
+      <p className="text-xs text-slate-400">{note}</p>
+    </div>
+  );
+}
